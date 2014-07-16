@@ -29,14 +29,14 @@ public class StackWithMax {
 		max = new Stack<Integer>();
 	}
 	
-	public void push(Integer item){
+	public void push(int item){
 		s.push(item);
 		
 		if(max.isEmpty()){
 			max.push(item);
 		}
 		else{
-			Integer currentMax = max.pop();
+			int currentMax = max.pop();
 			if(item >= currentMax){
 				max.push(currentMax);
 				max.push(item);
@@ -47,12 +47,12 @@ public class StackWithMax {
 		}
 	}
 	
-	public Integer pop(){
+	public int pop(){
 		if(s.isEmpty()){
 			throw new NoSuchElementException();
 		}
-		Integer item = s.pop();
-		Integer currentMax = max.pop();
+		int item = s.pop();
+		int currentMax = max.pop();
 		if(item < currentMax){
 			max.push(currentMax);
 		}
@@ -63,8 +63,9 @@ public class StackWithMax {
 		return s.isEmpty();
 	}
 	
-	public Integer max(){
-		Integer currentMax = max.pop();
+	public int max(){
+	    if (max.isEmpty()) throw new NoSuchElementException();
+		int currentMax = max.pop();
 		max.push(currentMax);
 		return currentMax;
 	}

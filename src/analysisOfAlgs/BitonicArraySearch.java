@@ -40,36 +40,6 @@ public class BitonicArraySearch {
         else return mid;
     } 
 
-//	/**
-//	 * @param a
-//	 * @description finds max element in the array, logN
-//	 */
-//	public static int findIndexMax(int[] a){
-//		int lo = 0;
-//		int hi = a.length-1;
-//		int mid = (hi-lo)/2 + lo;
-//
-//		while(lo <= hi){
-//			if(lo == hi){
-//				return lo;
-//			}
-//			mid = (hi-lo)/2 + lo;
-//			if(mid - 1 >= 0 && a[mid] < a[mid-1]){
-//				hi = mid - 1;
-//			}
-//			else{
-//				lo = mid;
-//			}
-//			if(mid + 1 <= a.length && a[mid] < a[mid+1]){
-//				lo = mid+1;
-//			}	
-//			else{
-//				hi = mid;
-//			}			
-//		}
-//		
-//		return mid;
-//	}
 	
 	public static boolean binarySearch(int[] a, int element, int lo, int hi, boolean asc) {
 	   
@@ -94,40 +64,7 @@ public class BitonicArraySearch {
 	    else return true;
 	    return bs;
 	}
-	
-//	public static boolean binarySearch(int[] a, int element, int start, int end, boolean asc){
-//		int lo = start;
-//		int hi = end;
-//		int mid = (hi-lo)/2 + lo;
-//
-//		while(hi >= 0 && lo <= a.length && lo <= hi){
-//		
-//			mid = (hi-lo)/2 + lo;
-//			if(a[mid] == element){
-//				return true;
-//			}
-//			else{
-//				if(asc){
-//					if(a[mid] < element){
-//						lo = mid + 1;
-//					}
-//					else{
-//						hi = mid - 1;
-//					}
-//				}
-//				else{
-//					if(a[mid] < element){
-//						hi = mid - 1;
-//					}
-//					else{
-//						lo = mid + 1;
-//					}
-//				}
-//			}
-//			
-//		}
-//		return false;
-//	}
+
 	
 	
 	/**
@@ -141,8 +78,7 @@ public class BitonicArraySearch {
 	    int lo = 0;
 	    int hi = a.length - 1;
 	    boolean exists = bitonicSearch(a, element, lo, hi);
-	    return exists;
-	    
+	    return exists;	    
 	}
 
 	/**
